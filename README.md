@@ -1,4 +1,4 @@
-# contributors-table-npm
+# contributors-table
 
 [![NPM Version](https://img.shields.io/npm/v/contributors-table?logo=npm&logoColor=212121&label=version&labelColor=FAFAFA&color=212121)](https://npmjs.com/package/contributors-table) [![Tests Status](https://img.shields.io/github/actions/workflow/status/okineadev/contributors-table-npm/test.yml?label=tests&labelColor=212121)](https://github.com/okineadev/contributors-table-npm/actions/workflows/test.yml) [![Built with Bun](https://img.shields.io/badge/Built_with-Bun-fbf0df?logo=bun&labelColor=212121)](https://bun.sh) [![Formatted with Biome](https://img.shields.io/badge/Formatted_with-Biome-60a5fa?style=flat&logo=biome&labelColor=212121)](https://biomejs.dev/)
 
