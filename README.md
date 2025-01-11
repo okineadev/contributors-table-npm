@@ -7,6 +7,14 @@ GitHub contributors table generator
 > [!NOTE]
 > A very fresh project, unexpected changes are possible.
 
+Powers the [contributors-table.vercel.app](https://contributors-table.vercel.app) service 😎.
+
+## ✨ Features
+
+- ⚙️ Flexible settings
+- 🎨 Customizable
+- 🤝 Images supported by Markdown on GitHub and anywhere!
+
 ## 📦 Installation
 
 ```bash
