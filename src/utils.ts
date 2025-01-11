@@ -7,7 +7,7 @@ import { USER_AGENT } from './config'
  * @param url - The URL of the image to fetch.
  * @returns A promise that resolves to a base64-encoded string representation of the image.
  */
-export async function getbase64Image(url: string) {
+export async function getbase64Image(url: string): Promise<string> {
 	const response = await fetch(url, {
 		headers: {
 			'User-Agent': USER_AGENT,
@@ -24,7 +24,7 @@ export async function getbase64Image(url: string) {
  * @param SVG - The SVG string to be converted.
  * @returns A promise that resolves to a buffer containing the PNG image.
  */
-export async function generatePNGFromSVG(SVG: string) {
+export async function generatePNGFromSVG(SVG: string): Promise<Buffer> {
 	const svgBuffer = Buffer.from(SVG)
 	const pngBuffer = await sharp(svgBuffer).png().toBuffer()
 
