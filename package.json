@@ -1,9 +1,10 @@
 {
 	"name": "contributors-table",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"description": "GitHub contributors table generator",
 	"license": "MIT",
 	"type": "module",
+
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/okineadev/contributors-table-npm"
@@ -14,9 +15,11 @@
 		"url": "https://github.com/okineadev"
 	},
 	"keywords": ["contributors", "image", "generator", "github"],
+
 	"module": "src/index.ts",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+
 	"scripts": {
 		"lint": "biome check --fix",
 		"format": "biome format --write",
