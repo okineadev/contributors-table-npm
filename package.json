@@ -22,8 +22,7 @@
 		"format": "biome format --write",
 		"test": "bun test",
 		"preversion": "bun run test && bun run format && git add .",
-		"build": "bun build ./src/index.ts  --minify --outdir ./dist --target node",
-		"postbuild": "bunx --bun tsc -p ./tsconfig.declarations.json",
+		"build": "bunx --bun tsup",
 		"prepublishOnly": "bun run build",
 		"prepare": "husky"
 	},
@@ -40,7 +39,7 @@
 		"changelogen": "^0.5.7",
 		"husky": "^9.1.6",
 		"lint-staged": "^15.2.10",
-		"typescript": "^5.7.2"
+		"tsup": "^8.3.5"
 	},
 	"trustedDependencies": ["@biomejs/biome"]
 }
