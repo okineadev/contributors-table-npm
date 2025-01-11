@@ -1,0 +1,12 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"noEmit": false,
+		"declarationMap": true,
+		"verbatimModuleSyntax": false,
+		"outFile": "dist/index.d.ts"
+	},
+	"include": ["src/index.ts"]
+}

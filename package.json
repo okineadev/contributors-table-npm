@@ -1,0 +1,49 @@
+{
+	"name": "contributors-table",
+	"version": "0.0.0",
+	"description": "GitHub contributors table generator",
+	"license": "MIT",
+	"type": "module",
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/okineadev/contributors-table-npm"
+	},
+	"author": {
+		"name": "Okinea Dev",
+		"email": "hi@okinea.dev",
+		"url": "https://github.com/okineadev"
+	},
+	"keywords": ["contributors", "image", "generator", "github"],
+
+	"module": "src/index.ts",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+
+	"scripts": {
+		"lint": "biome check --fix",
+		"format": "biome format --write",
+		"test": "bun test",
+		"preversion": "bun run test && bun run format && git add .",
+		"build": "bun build ./src/index.ts  --minify --outdir ./dist --target node",
+		"postbuild": "bunx --bun tsc -p ./tsconfig.declarations.json",
+		"prepublishOnly": "bun run build",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"*": "bun run format --no-errors-on-unmatched"
+	},
+	"dependencies": {
+		"sharp": "^0.33.5",
+		"svgo": "^3.3.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "^1.1.14",
+		"changelogen": "^0.5.7",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"typescript": "^5.7.2"
+	},
+	"trustedDependencies": ["@biomejs/biome"]
+}
