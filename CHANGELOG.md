@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v1.0.0
+
+[compare changes](https://github.com/okineadev/contributors-table-npm/compare/v0.0.2...v1.0.0)
+
+### 🚀 Enhancements
+
+- Improve types ([4640c45](https://github.com/okineadev/contributors-table-npm/commit/4640c45))
+
+### 💅 Refactors
+
+- ✏️ update parameter names for clarity ([b2843a8](https://github.com/okineadev/contributors-table-npm/commit/b2843a8))
+
+### 📖 Documentation
+
+- Add features section in readme ([abf0634](https://github.com/okineadev/contributors-table-npm/commit/abf0634))
+- Fix docs ([164cea1](https://github.com/okineadev/contributors-table-npm/commit/164cea1))
+
+### ❤️ Contributors
+
+- Okinea Dev ([@okineadev](http://github.com/okineadev))
+
 ## v0.0.2
 
 [compare changes](https://github.com/okineadev/contributors-table-npm/compare/v0.0.1...v0.0.2)
