@@ -53,7 +53,7 @@ const image = generateContributorsTable(contributorsList.data)
 
 ```ts
 // Generate a PNG image
-generateContributorsTable(..., { type: 'png' })
+generateContributorsTable(..., { format: 'png' })
 ```
 
 ### Customize the table
@@ -69,7 +69,7 @@ generateContributorsTable(..., {
     // The roundness of the avatars
     roundness: 50,
     // Stroke around avatars
-    borderWith: 0.8,
+    strokeWith: 0.8,
     // Whether to render avatars on the server side.
     // If false - then the browser itself downloads images from GitHub
     // If true - then the script takes care of downloading avatars and embedding them
