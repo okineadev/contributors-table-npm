@@ -12,9 +12,10 @@ import type { Contributor } from './types'
  * @param width - Width and height of each avatar in pixels
  * @param columns - Number of avatars per row
  * @param roundness - Border radius of avatars in pixels or `'yes'` for full roundness (width value)
- * @param borderWidth - Width of the border around avatars in pixels
+ * @param strokeWidth - Width of the border around avatars in pixels
  * @param ssr - Whether to use server-side rendering to fetch and embed avatars in the SVG
- * @param type - Output image type (`'svg'` or `'png'`)
+ * @param format - Output image type (`'svg'` or `'png'`)
+ * @param borderWidth - Deprecated, use `strokeWidth` instead
  *
  * @returns Promise resolving to image
  */
@@ -25,9 +26,13 @@ export async function generateContributorsTable(
 		width?: number
 		columns?: number
 		roundness?: number | string
-		borderWidth?: number
+		strokeWidth?: number
 		ssr?: boolean
+		format?: string
+		/** @deprecated use `format` instead */
 		type?: string
+		/** @deprecated use `strokeWidth` instead */
+		borderWidth?: number // deprecated
 	},
 ): Promise<string | Buffer> {
 	const {
@@ -35,11 +40,10 @@ export async function generateContributorsTable(
 		width = 40,
 		columns = 21,
 		roundness = 6,
-		borderWidth = 0,
+		strokeWidth = params?.borderWidth ?? 0,
 		ssr = true,
-		type = 'svg',
+		format = params?.type ?? 'svg',
 	} = params || {}
-
 	if (contributors.length === 0) {
 		throw new Error('The list of contributors is empty')
 	}
@@ -51,8 +55,8 @@ export async function generateContributorsTable(
 	// const actualColumns = Math.min(columns, params.contributors.length)
 
 	const svgDimensions = {
-		width: columns * width + borderWidth + (columns - 1) * gap,
-		height: rows * width + borderWidth + (rows - 1) * gap,
+		width: columns * width + strokeWidth + (columns - 1) * gap,
+		height: rows * width + strokeWidth + (rows - 1) * gap,
 	}
 
 	let SVG = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${svgDimensions.width}" height="${svgDimensions.height}">`
@@ -67,7 +71,7 @@ export async function generateContributorsTable(
 		}
 		a > svg > rect {
 			stroke: #c0c0c0;
-			stroke-width: ${borderWidth ? `${borderWidth}px` : 0};
+			stroke-width: ${strokeWidth ? `${strokeWidth}px` : 0};
 			width: ${width}px;
 			height: ${width}px;
 		}
@@ -78,7 +82,7 @@ export async function generateContributorsTable(
 
 	// Parallel avatar loading
 	const avatarPromises = contributors.map(async (contributor) => {
-		return ssr || type === 'png'
+		return ssr || format === 'png'
 			? await getbase64Image(`${contributor.avatar_url}&s=${width}`)
 			: `${contributor.avatar_url}&amp;s=${width}`
 	})
@@ -90,8 +94,8 @@ export async function generateContributorsTable(
 		const avatarUrl = avatarUrls[index]
 
 		const avatarPosition = {
-			x: (index % columns) * (width + gap) + borderWidth / 2,
-			y: Math.floor(index / columns) * (width + gap) + borderWidth / 2,
+			x: (index % columns) * (width + gap) + strokeWidth / 2,
+			y: Math.floor(index / columns) * (width + gap) + strokeWidth / 2,
 		}
 
 		SVG += `
@@ -111,7 +115,7 @@ export async function generateContributorsTable(
 
 	SVG += '</svg>'
 
-	if (type === 'png') {
+	if (format === 'png') {
 		return await generatePNGFromSVG(SVG)
 	}
 

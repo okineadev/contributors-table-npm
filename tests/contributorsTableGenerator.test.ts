@@ -30,7 +30,7 @@ describe('generateContributorsTable', () => {
 	it('should generate PNG buffer when type is png', async () => {
 		const result = await generateContributorsTable(sampleContributors, {
 			...sampleParams,
-			type: 'png',
+			format: 'png',
 		})
 		expect(result).toBeInstanceOf(Buffer)
 	})
