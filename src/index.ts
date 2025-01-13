@@ -2,6 +2,7 @@ import { optimize } from 'svgo'
 
 import { SVGOConfig } from './config'
 import { getbase64Image, generatePNGFromSVG } from './utils'
+import type { Contributor } from './types'
 
 /**
  * Generates image containing table with contributor avatars with links to their GitHub profiles
@@ -18,7 +19,7 @@ import { getbase64Image, generatePNGFromSVG } from './utils'
  * @returns Promise resolving to image
  */
 export async function generateContributorsTable(
-	contributors: { login: string; avatar_url: string }[],
+	contributors: Contributor[],
 	params?: {
 		gap?: number
 		width?: number

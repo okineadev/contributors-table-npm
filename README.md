@@ -4,14 +4,13 @@
 
 GitHub contributors table generator
 
-> [!NOTE]
-> A very fresh project, unexpected changes are possible.
-
-Powers the [contributors-table.vercel.app](https://contributors-table.vercel.app) service 😎.
+> Powers the [contributors-table.vercel.app](https://contributors-table.vercel.app) 😎
 
 ## ✨ Features
 
 - ⚙️ Flexible settings
+- 🔗 Hyperlinks to contributors profiles
+- 💡 Hints when hovering over an avatar
 - 🎨 Customizable
 - 🤝 Images supported by Markdown on GitHub and anywhere!
 
@@ -46,7 +45,7 @@ const image = generateContributorsTable(contributorsList.data)
 
 ### 🏞️ An example of an image
 
-![Contributor Table Example](https://contributors-table.vercel.app/image?repo=material-extensions/vscode-material-icon-theme)
+![Contributor Table Example](assets/example.svg)
 
 ### Advanced Usage
 

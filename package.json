@@ -1,9 +1,10 @@
 {
 	"name": "contributors-table",
 	"version": "0.0.2",
-	"description": "GitHub contributors table generator",
+	"description": "👥 GitHub contributors table generator",
 	"license": "MIT",
 	"type": "module",
+	"funding": "https://github.com/okineadev/contributors-table-npm?sponsor=1",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/okineadev/contributors-table-npm"
@@ -35,6 +36,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
+		"@octokit/types": "^13.7.0",
 		"@types/bun": "^1.1.14",
 		"changelogen": "^0.5.7",
 		"husky": "^9.1.6",

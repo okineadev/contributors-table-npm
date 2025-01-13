@@ -16,7 +16,7 @@
 
 		// Best practices
 		"strict": true,
-		"skipLibCheck": true,
+		"skipLibCheck": false,
 		"noFallthroughCasesInSwitch": true,
 
 		// Some stricter flags (disabled by default)
@@ -24,6 +24,9 @@
 		"noUnusedParameters": true,
 		"noPropertyAccessFromIndexSignature": false,
 
-		"types": ["bun-types"]
-	}
+		"types": ["bun-types"],
+
+		"rootDir": "src",
+	},
+	"include": ["src/**/*.ts"]
 }
