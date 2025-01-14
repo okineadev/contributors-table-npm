@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.1
+
+[compare changes](https://github.com/okineadev/contributors-table-npm/compare/v1.0.0...v1.0.1)
+
+### 🩹 Fixes
+
+- 🚑 don't use `.map()` ([3ecc50f](https://github.com/okineadev/contributors-table-npm/commit/3ecc50f))
+
+### ❤️ Contributors
+
+- Okinea Dev ([@okineadev](http://github.com/okineadev))
+
 ## v1.0.0
 
 [compare changes](https://github.com/okineadev/contributors-table-npm/compare/v0.0.2...v1.0.0)
