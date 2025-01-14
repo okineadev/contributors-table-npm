@@ -80,12 +80,15 @@ export async function generateContributorsTable(
 
 	SVG += svgStyle
 
-	// Parallel avatar loading
-	const avatarPromises = contributors.map(async (contributor) => {
-		return ssr || format === 'png'
-			? await getbase64Image(`${contributor.avatar_url}&s=${width}`)
-			: `${contributor.avatar_url}&amp;s=${width}`
-	})
+	// Sequential avatar loading
+	const avatarPromises = []
+	for (const contributor of contributors) {
+		const avatarUrl =
+			ssr || format === 'png'
+				? await getbase64Image(`${contributor.avatar_url}&s=${width}`)
+				: `${contributor.avatar_url}&amp;s=${width}`
+		avatarPromises.push(avatarUrl)
+	}
 
 	const avatarUrls = await Promise.all(avatarPromises)
 
