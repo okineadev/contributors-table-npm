@@ -4,22 +4,40 @@ import { SVGOConfig } from './config'
 import { getbase64Image, generatePNGFromSVG } from './utils'
 import type { Contributor } from './types'
 
+interface ContributorsTableParams {
+	/** Horizontal spacing between avatars in pixels */
+	gap?: number
+	/** Width and height of each avatar in pixels */
+	width?: number
+	/** Number of avatars per row */
+	columns?: number
+	/** Border radius of avatars in pixels or `'yes'` for full roundness (width value) */
+	roundness?: number | 'yes'
+	/** Width of the border around avatars in pixels */
+	strokeWidth?: number
+	/** Whether to use server-side rendering to fetch and embed avatars in the SVG */
+	ssr?: boolean
+	/** Output image type*/
+	format?: 'svg' | 'png'
+
+	/** @deprecated use `format` instead */
+	type?: 'svg' | 'png'
+	/** @deprecated use `strokeWidth` instead */
+	borderWidth?: number
+}
+
 /**
  * Generates image containing table with contributor avatars with links to their GitHub profiles
  *
- * @param params - Array of contributor objects containing `login` and `avatar_url`
- * @param gap - Horizontal spacing between avatars in pixels
- * @param width - Width and height of each avatar in pixels
- * @param columns - Number of avatars per row
- * @param roundness - Border radius of avatars in pixels or `'yes'` for full roundness (width value)
- * @param strokeWidth - Width of the border around avatars in pixels
- * @param ssr - Whether to use server-side rendering to fetch and embed avatars in the SVG
- * @param format - Output image type (`'svg'` or `'png'`)
- * @param borderWidth - Deprecated, use `strokeWidth` instead
+ * @param contributors - Array of contributor objects containing `login` and `avatar_url`
+ * @param options - Configuration options
  *
- * @returns Promise resolving to image
+ * @returns Promise resolving to SVG string or PNG buffer
  */
-export async function generateContributorsTable(
+export async function generateContributorsTable<
+	T extends ContributorsTableParams,
+	ReturnFormat = T['format'] extends 'png' ? Buffer : string,
+>(
 	contributors: Contributor[],
 	{
 		gap = 6,
@@ -29,22 +47,11 @@ export async function generateContributorsTable(
 		strokeWidth = 0,
 		ssr = true,
 		format = 'svg',
-		type,
-		borderWidth,
-	}: {
-		gap?: number
-		width?: number
-		columns?: number
-		roundness?: number | string
-		strokeWidth?: number
-		ssr?: boolean
-		format?: string
-		/** @deprecated use `format` instead */
-		type?: string
-		/** @deprecated use `strokeWidth` instead */
-		borderWidth?: number // deprecated
-	} = {},
-): Promise<string | Buffer> {
+
+		type = undefined,
+		borderWidth = undefined,
+	}: T = {} as T,
+): Promise<ReturnFormat> {
 	if (contributors.length === 0) {
 		throw new Error('The list of contributors is empty')
 	}
@@ -123,8 +130,8 @@ export async function generateContributorsTable(
 	SVG += '</svg>'
 
 	if (format === 'png') {
-		return await generatePNGFromSVG(SVG)
+		return generatePNGFromSVG(SVG) as ReturnFormat
 	}
 
-	return optimize(SVG, SVGOConfig).data
+	return optimize(SVG, SVGOConfig).data as ReturnFormat
 }
