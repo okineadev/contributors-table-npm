@@ -66,6 +66,8 @@ generateContributorsTable(..., {
     gap: 10,
     // The number of avatars per row
     columns: 10,
+    // Number of rows
+    rows: 7,
     // The roundness of the avatars
     roundness: 50,
     // Stroke around avatars
@@ -73,7 +75,7 @@ generateContributorsTable(..., {
     // Whether to render avatars on the server side.
     // If false - then the browser itself downloads images from GitHub
     // If true - then the script takes care of downloading avatars and embedding them
-    // Always `true` if `type` != `'svg'`
+    // Always `true` if `format` != `'svg'`
     ssr: true
 })
 ```
