@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.2
+
+[compare changes](https://github.com/okineadev/contributors-table-npm/compare/v1.0.1...v1.0.2)
+
+### 🩹 Fixes
+
+- Fix types ([849f6c3](https://github.com/okineadev/contributors-table-npm/commit/849f6c3))
+
+### ❤️ Contributors
+
+- Okinea Dev ([@okineadev](http://github.com/okineadev))
+
 ## v1.0.1
 
 [compare changes](https://github.com/okineadev/contributors-table-npm/compare/v1.0.0...v1.0.1)
