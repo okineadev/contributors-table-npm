@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.1.0
+
+[compare changes](https://github.com/okineadev/contributors-table-npm/compare/v1.0.2...v1.1.0)
+
+### 🚀 Enhancements
+
+- Create dev server and improve tests ([e2e38f3](https://github.com/okineadev/contributors-table-npm/commit/e2e38f3))
+
+### ❤️ Contributors
+
+- Okinea Dev ([@okineadev](http://github.com/okineadev))
+
 ## v1.0.2
 
 [compare changes](https://github.com/okineadev/contributors-table-npm/compare/v1.0.1...v1.0.2)
