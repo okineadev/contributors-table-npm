@@ -1,6 +1,29 @@
 # Changelog
 
 
+## v1.2.0
+
+[compare changes](https://github.com/okineadev/contributors-table-npm/compare/v1.1.0...v1.2.0)
+
+### 🚀 Enhancements
+
+- Make conditional output types ([a61233e](https://github.com/okineadev/contributors-table-npm/commit/a61233e))
+- **devserver:** ✨ allow to set sample contributors count ([234c593](https://github.com/okineadev/contributors-table-npm/commit/234c593))
+
+### 📖 Documentation
+
+- ✏️ update README with additional configuration options ([0987d8b](https://github.com/okineadev/contributors-table-npm/commit/0987d8b))
+
+### 🏡 Chore
+
+- Update useragent ([2761d36](https://github.com/okineadev/contributors-table-npm/commit/2761d36))
+- Update internal code ([9dffaca](https://github.com/okineadev/contributors-table-npm/commit/9dffaca))
+- 🗑️ remove pre-push hook and update lint-staged configuration ([8048b49](https://github.com/okineadev/contributors-table-npm/commit/8048b49))
+
+### ❤️ Contributors
+
+- Okinea Dev ([@okineadev](http://github.com/okineadev))
+
 ## v1.1.0
 
 [compare changes](https://github.com/okineadev/contributors-table-npm/compare/v1.0.2...v1.1.0)
