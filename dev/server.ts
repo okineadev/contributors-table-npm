@@ -1,14 +1,15 @@
 import sampleContributor from '../samples/sampleContributor'
 import { generateContributorsTable } from '../src'
+import type { Contributor } from '../src/types'
 
 const devServer = Bun.serve({
 	async fetch(req: Request): Promise<Response> {
 		const url = new URL(req.url)
 		const params = Object.fromEntries(url.searchParams.entries())
 
-		const sampleContributors = Array(Number(params.contributors) || 100).fill(
-			sampleContributor,
-		)
+		const sampleContributors: Contributor[] = Array(
+			Number(params.contributors) || 200,
+		).fill(sampleContributor)
 
 		const image = await generateContributorsTable(sampleContributors, {
 			ssr: false,

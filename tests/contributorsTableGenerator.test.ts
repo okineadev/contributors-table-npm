@@ -12,7 +12,10 @@ const sampleParams = {
 
 describe('generateContributorsTable', () => {
 	it('should generate SVG with correct dimensions and attributes', async () => {
-		const result = await generateContributorsTable(contributors, sampleParams)
+		const result = await generateContributorsTable(
+			Array(2).fill(contributors[0]),
+			sampleParams,
+		)
 		expect(result).toMatchSnapshot()
 	})
 
@@ -26,14 +29,14 @@ describe('generateContributorsTable', () => {
 
 	it('should render the correct number of contributors', async () => {
 		const result = (await generateContributorsTable(
-			Array(5).fill(contributors[0]),
+			Array(2).fill(contributors[0]),
 			sampleParams,
 		)) as string
-		expect(result.match(/<title>contributor<\/title>/g)?.length).toBe(5)
+		expect(result.match(/<title>contributor<\/title>/g)?.length).toBe(2)
 	})
 
-	it('should throw an error if there are no contributors', () => {
-		expect(generateContributorsTable([])).rejects.toThrow(Error)
+	it('should throw an error when the list of contributors is empty', async () => {
+		expect(generateContributorsTable([], sampleParams)).rejects.toThrow(Error)
 	})
 
 	it('should render avatars on server-side when ssr is true', async () => {

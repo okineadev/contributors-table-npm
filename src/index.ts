@@ -11,6 +11,8 @@ interface ContributorsTableParams {
 	width?: number
 	/** Number of avatars per row */
 	columns?: number
+	/** Number of rows */
+	rows?: number
 	/** Border radius of avatars in pixels or `'yes'` for full roundness (width value) */
 	roundness?: number | 'yes'
 	/** Width of the border around avatars in pixels */
@@ -43,6 +45,7 @@ export async function generateContributorsTable<
 		gap = 6,
 		width = 40,
 		columns = 21,
+		rows = 7,
 		roundness = 6,
 		strokeWidth = 0,
 		ssr = true,
@@ -62,7 +65,7 @@ export async function generateContributorsTable<
 	const adjustedRoundness =
 		typeof roundness === 'string' && roundness === 'yes' ? width : roundness
 
-	const rows = Math.ceil(contributors.length / columns)
+	rows = rows || Math.ceil(contributors.length / columns)
 	// const actualColumns = Math.min(columns, params.contributors.length)
 
 	const svgDimensions = {
