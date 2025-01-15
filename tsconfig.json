@@ -24,9 +24,6 @@
 		"noUnusedParameters": true,
 		"noPropertyAccessFromIndexSignature": false,
 
-		"types": ["bun-types"],
-
-		"rootDir": "src"
-	},
-	"include": ["src/**/*.ts"]
+		"types": ["bun-types"]
+	}
 }

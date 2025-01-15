@@ -24,6 +24,7 @@
 		"test": "bun test",
 		"preversion": "bun run test && bun run format && git add .",
 		"build": "bunx --bun tsup",
+		"dev": "bun --bun --watch dev/server.ts samples/sampleContributors.ts src/*.ts",
 		"prepublishOnly": "bun run build",
 		"prepare": "husky"
 	},
