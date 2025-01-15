@@ -1,5 +1,7 @@
-import sampleContributors from '../samples/sampleContributors'
+import sampleContributor from '../samples/sampleContributor'
 import { generateContributorsTable } from '../src'
+
+const sampleContributors = Array(100).fill(sampleContributor)
 
 const devServer = Bun.serve({
 	async fetch(req: Request): Promise<Response> {

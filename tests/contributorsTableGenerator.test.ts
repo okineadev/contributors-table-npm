@@ -1,13 +1,9 @@
 import { describe, it, expect } from 'bun:test'
 import { generateContributorsTable } from '../src'
+import sampleContributor from '../samples/sampleContributor'
 
 // Only one contributor
-const contributors = [
-	{
-		login: 'contributor',
-		avatar_url: 'https://avatars.githubusercontent.com/u/583231?v=4',
-	},
-]
+const contributors = [sampleContributor]
 
 const sampleParams = {
 	ssr: false,
