@@ -6,7 +6,7 @@ import type { Config } from 'svgo'
  */
 // TODO: Find out if it is necessary
 export const USER_AGENT =
-	'contributors-table-library/x.y.z (https://github.com/okineadev/contributors-table-npm)'
+	'contributors-table-generator (https://github.com/okineadev/contributors-table-npm)'
 
 /** SVGO configuration for SVG compression */
 export const SVGOConfig: Config = {
