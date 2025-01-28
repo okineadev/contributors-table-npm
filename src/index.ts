@@ -66,11 +66,14 @@ export async function generateContributorsTable<
 		typeof roundness === 'string' && roundness === 'yes' ? width : roundness
 
 	rows = rows || Math.ceil(contributors.length / columns)
-	// const actualColumns = Math.min(columns, params.contributors.length)
+
+	const totalElements = contributors.length
+	const actualColumns = Math.min(columns, totalElements)
+	const actualRows = Math.ceil(totalElements / actualColumns)
 
 	const svgDimensions = {
 		width: columns * width + strokeWidth + (columns - 1) * gap,
-		height: rows * width + strokeWidth + (rows - 1) * gap,
+		height: actualRows * width + strokeWidth + (actualRows - 1) * gap,
 	}
 
 	let SVG = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${svgDimensions.width}" height="${svgDimensions.height}">`
