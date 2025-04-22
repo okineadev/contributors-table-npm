@@ -19,11 +19,11 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
-		"lint": "biome check --fix",
+		"lint": "biome check",
 		"format": "biome format --write",
 		"test": "bun test",
 		"preversion": "bun run test && bun run format && git add .",
-		"build": "bunx --bun tsup",
+		"build": "bunup",
 		"dev": "bun --bun --watch dev/server.ts samples/sampleContributors.ts src/*.ts",
 		"prepublishOnly": "bun run build",
 		"prepare": "husky"
@@ -40,10 +40,12 @@
 		"@biomejs/biome": "1.9.4",
 		"@octokit/types": "^14.0.0",
 		"@types/bun": "^1.1.14",
+		"@types/node": "^22.14.1",
+		"bunup": "^0.4.65",
 		"changelogen": "^0.6.0",
 		"husky": "^9.1.6",
 		"lint-staged": "^15.2.10",
-		"tsup": "^8.3.5"
+		"typescript": "^5.8.3"
 	},
 	"trustedDependencies": ["@biomejs/biome"]
 }

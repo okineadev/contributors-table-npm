@@ -1,6 +1,7 @@
-import { describe, it, expect } from 'bun:test'
-import { generateContributorsTable } from '../src'
+import { describe, expect, it } from 'bun:test'
 import sampleContributor from '../samples/sampleContributor'
+// @ts-ignore
+import { generateContributorsTable } from '../src'
 
 // Only one contributor
 const contributors = [sampleContributor]

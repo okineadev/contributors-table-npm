@@ -1,6 +1,6 @@
 import sampleContributor from '../samples/sampleContributor'
 import { generateContributorsTable } from '../src'
-import type { Contributor } from '../src/types'
+import type { Contributor } from '../src/types.d'
 
 const devServer = Bun.serve({
 	async fetch(req: Request): Promise<Response> {

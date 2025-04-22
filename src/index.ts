@@ -1,8 +1,8 @@
 import { optimize } from 'svgo'
 
 import { SVGOConfig } from './config'
-import { getbase64Image, generatePNGFromSVG } from './utils'
-import type { Contributor } from './types'
+import type { Contributor } from './types.d'
+import { generatePNGFromSVG, getbase64Image } from './utils'
 
 interface ContributorsTableParams {
 	/** Horizontal spacing between avatars in pixels */

@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'bun:test'
-import { getbase64Image } from '../src/utils'
+import { describe, expect, it } from 'bun:test'
 import staplerCat from '../samples/stapler-cat.png'
+import { getbase64Image } from '../src/utils'
 
 describe('getbase64Image', () => {
 	it('should fetch an image and return a base64-encoded string', async () => {

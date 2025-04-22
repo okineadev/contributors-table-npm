@@ -1,4 +1,4 @@
-import type { Contributor } from '../src/types'
+import type { Contributor } from '../src/types.d'
 
 const sampleContributor: Contributor = {
 	login: 'contributor',

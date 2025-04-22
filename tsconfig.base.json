@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		// Best practices
+		"strict": true,
+		"skipLibCheck": false,
+		"noFallthroughCasesInSwitch": true,
+
+		"esModuleInterop": true,
+
+		// Some stricter flags (disabled by default)
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noPropertyAccessFromIndexSignature": false
+	}
+}
