@@ -41,10 +41,10 @@
 		"@octokit/types": "^14.0.0",
 		"@types/bun": "^1.1.14",
 		"@types/node": "^22.14.1",
-		"bunup": "^0.4.65",
+		"bunup": "^0.8.23",
 		"changelogen": "^0.6.0",
 		"husky": "^9.1.6",
-		"lint-staged": "^15.2.10",
+		"lint-staged": "^16.1.0",
 		"typescript": "^5.8.3"
 	},
 	"trustedDependencies": ["@biomejs/biome"]
