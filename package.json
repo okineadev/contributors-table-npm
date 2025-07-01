@@ -34,17 +34,17 @@
 	},
 	"dependencies": {
 		"sharp": "^0.34.0",
-		"svgo": "^3.3.2"
+		"svgo": "^4.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.0.6",
 		"@octokit/types": "^14.0.0",
 		"@types/bun": "^1.1.14",
-		"@types/node": "^22.14.1",
-		"bunup": "^0.4.65",
+		"@types/node": "^24.0.10",
+		"bunup": "^0.8.50",
 		"changelogen": "^0.6.0",
 		"husky": "^9.1.6",
-		"lint-staged": "^15.2.10",
+		"lint-staged": "^16.1.2",
 		"typescript": "^5.8.3"
 	},
 	"trustedDependencies": ["@biomejs/biome"]
